@@ -62,6 +62,30 @@ async function listSweets(req, res) {
       }
     }
 
+    /**
+ * Update sweet details (Admin-only)
+ */
+async function updateSweet(req, res) {
+      try {
+        const { id } = req.params;
+        const { name, category, price, quantity } = req.body;
+
+        const sweet = await Sweet.findByIdAndUpdate(
+          id,
+          { name, category, price, quantity },
+          { new: true, runValidators: true }
+        );
+
+        if (!sweet) {
+          return res.status(404).json({ message: "Sweet not found" });
+        }
+
+        return res.status(200).json(sweet);
+      } catch (error) {
+        return res.status(500).json({ message: "Internal server error" });
+      }
+    }
+
 module.exports = {
-  createSweet,listSweets,searchSweets
+  createSweet,listSweets,searchSweets,updateSweet
 };

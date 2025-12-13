@@ -16,5 +16,6 @@ router.get("/", authenticate, listSweets);
 //search route for the sweet
 router.get("/search", authenticate, searchSweets);
 
-
+// Admin-only: update sweet
+router.put("/:id", authenticate, authorizeAdmin, updateSweet);
 module.exports = router;
