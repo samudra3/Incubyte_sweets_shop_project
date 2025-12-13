@@ -1,5 +1,6 @@
 const express = require("express");
-const { createSweet,listSweets,searchSweets} = require("./sweets.controller");
+const { createSweet,listSweets,searchSweets,
+      updateSweet,deleteSweet} = require("./sweets.controller");
 const {
   authenticate,
   authorizeAdmin
@@ -18,4 +19,7 @@ router.get("/search", authenticate, searchSweets);
 
 // Admin-only: update sweet
 router.put("/:id", authenticate, authorizeAdmin, updateSweet);
+
+// Admin-only: delete sweet
+router.delete("/:id", authenticate, authorizeAdmin, deleteSweet);
 module.exports = router;
