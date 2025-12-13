@@ -19,7 +19,19 @@ async function createSweet(req, res) {
     return res.status(500).json({ message: "Internal server error" });
   }
 }
+/**
+ *  search for the list of sweets
+ */
+async function listSweets(req, res) {
+      try {
+        const sweets = await Sweet.find();
+        return res.status(200).json(sweets);
+      } catch (err) {
+        return res.status(500).json({ message: "Internal server error" });
+      }
+    }
+
 
 module.exports = {
-  createSweet
+  createSweet,listSweets
 };
