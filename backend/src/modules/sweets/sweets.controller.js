@@ -20,7 +20,7 @@ async function createSweet(req, res) {
   }
 }
 /**
- *  search for the list of sweets
+ *  Get all the list of sweets
  */
 async function listSweets(req, res) {
       try {
@@ -31,7 +31,37 @@ async function listSweets(req, res) {
       }
     }
 
+/**
+ *  search all the list of sweets
+ */
+
+    async function searchSweets(req, res) {
+      try {
+        const { name, category, minPrice, maxPrice } = req.query;
+
+        const query = {};
+
+        if (name) {
+          query.name = { $regex: name, $options: "i" };
+        }
+
+        if (category) {
+          query.category = category;
+        }
+
+        if (minPrice || maxPrice) {
+          query.price = {};
+          if (minPrice) query.price.$gte = Number(minPrice);
+          if (maxPrice) query.price.$lte = Number(maxPrice);
+        }
+
+        const sweets = await Sweet.find(query);
+        return res.status(200).json(sweets);
+      } catch (error) {
+        return res.status(500).json({ message: "Internal server error" });
+      }
+    }
 
 module.exports = {
-  createSweet,listSweets
+  createSweet,listSweets,searchSweets
 };

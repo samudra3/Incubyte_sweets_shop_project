@@ -1,5 +1,5 @@
 const express = require("express");
-const { createSweet,listSweets} = require("./sweets.controller");
+const { createSweet,listSweets,searchSweets} = require("./sweets.controller");
 const {
   authenticate,
   authorizeAdmin
@@ -10,7 +10,11 @@ const router = express.Router();
 // Admin-only: add sweet
 router.post("/", authenticate, authorizeAdmin, createSweet);
 
-// search route for the sweet
+// get route for the sweet
 router.get("/", authenticate, listSweets);
+
+//search route for the sweet
+router.get("/search", authenticate, searchSweets);
+
 
 module.exports = router;
