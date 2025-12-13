@@ -105,6 +105,30 @@ async function deleteSweet(req, res) {
       }
     }
 
+    /**
+ * Purchase a sweet (Authenticated users)
+ */
+async function purchaseSweet(req, res) {
+      try {
+        const { id } = req.params;
+        const { quantity } = req.body;
+
+        const sweet = await Sweet.findById(id);
+        if (!sweet) return res.status(404).json({ message: "Sweet not found" });
+
+        if (sweet.quantity < quantity) {
+          return res.status(400).json({ message: "Insufficient stock" });
+        }
+
+        sweet.quantity -= quantity;
+        await sweet.save();
+
+        return res.status(200).json({ message: "Purchase successful", sweet });
+      } catch (error) {
+        return res.status(500).json({ message: "Internal server error" });
+      }
+    }
 module.exports = {
-  createSweet,listSweets,searchSweets,updateSweet,deleteSweet
+  createSweet,listSweets,searchSweets,
+  updateSweet,deleteSweet,purchaseSweet
 };
