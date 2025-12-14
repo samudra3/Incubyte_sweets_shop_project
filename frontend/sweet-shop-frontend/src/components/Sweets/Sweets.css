@@ -1,0 +1,87 @@
+.sweet-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .sweet-card {
+      background: #fff3e0;
+      border-radius: 15px;
+      padding: 15px;
+      width: 100%;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .sweet-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    .sweet-image {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+
+    .purchase-section {
+      display: flex;
+      gap: 5px;
+      margin-top: 10px;
+      align-items: center;
+    }
+
+    .purchase-section input {
+      width: 50px;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .purchase-section button {
+      padding: 8px 12px;
+      border: none;
+      background-color: #fb8c00;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .purchase-section button:hover {
+      background-color: #ef6c00;
+    }
+
+    .sweet-card button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 768px) {
+      .sweet-list {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      }
+    }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px;
+      justify-content: center;
+    }
+
+    .filter-bar input, .filter-bar select {
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .purchased-section {
+      margin-top: 40px;
+      padding: 10px 20px;
+    }
