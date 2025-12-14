@@ -1,144 +1,136 @@
-🍬 Sweet Shop Management System
+🌐 Live Links
 
-A full-stack Sweet Shop Management System built with React on the frontend and Node.js + Express + MongoDB on the backend.
-The application supports user authentication, role-based access control, inventory management, and a smooth shopping experience for users.
-
-🔗 Live Project:
+🔗 Frontend (Live Project)
 👉 https://sweetsshop-4jdqcloc1-sahil-singhs-projects-25af95e5.vercel.app
 
-🔗 Backend API:
+🔗 Backend API
 👉 https://sweet-shop-backend-2-imm1.onrender.com
 
-✨ Features
-👤 Authentication
+✨ Key Features
+👤 Authentication & Authorization
 
-User registration and login
+🔹 User registration and login
+🔹 JWT-based authentication
+🔹 Role-based access control (User / Admin)
+🔹 Protected routes enforced using middleware
 
-JWT-based authentication
+🍭 Sweets Management (User)
 
-Role-based authorization (User / Admin)
+🍬 View all available sweets
+🍬 Search sweets by name
+🍬 Filter sweets by category
+🍬 Filter sweets by price range
+🍬 Purchase sweets (inventory updates automatically)
 
-🍭 Sweets Management
+🛠 Admin Capabilities
 
-View all available sweets
-
-Search sweets by name, category, or price range
-
-Purchase sweets (quantity decreases automatically)
-
-🛠 Admin Features
-
-Add new sweets
-
-Update sweet details
-
-Delete sweets
-
-Restock inventory
-
-📸 Application Screenshots
-![alt text](<Screenshot from 2025-12-14 07-24-54.png>)
-
-🔐 Login & Registration
-![alt text](image.png)
-
-🏠 User Dashboard
-![alt text](image.png)
-
-👑 Admin Management Panel
+👑 Add new sweets
+👑 Update sweet details
+👑 Delete sweets
+👑 Restock inventory
+👑 Admin-only API route protection
 
 🧰 Tech Stack
-Frontend
 
-React (Create React App)
+🎨 Frontend
 
-Context API for authentication
+🟢 React (Create React App)
+🟢 Context API for authentication & global state
+🟢 Fetch API for backend communication
+🟢 CSS for responsive and clean UI
 
-Fetch API for backend communication
+⚙ Backend
 
-CSS for responsive UI
+🔵 Node.js
+🔵 Express.js
+🔵 MongoDB with Mongoose
+🔵 JWT Authentication
+🔵 Role-based authorization middleware
 
-Backend
+🧪 Testing
 
-Node.js
-
-Express.js
-
-MongoDB & Mongoose
-
-JWT Authentication
-
-Role-based middleware
+🧫 Jest
+🧫 Supertest
+🧫 MongoDB Test Environment
 
 🔌 API Overview
-Auth
+🔐 Authentication
 
-POST /api/auth/register
+📌 POST /api/auth/register
+📌 POST /api/auth/login
 
-POST /api/auth/login
+🍭 Sweets (Protected)
 
-* Sweets (Protected)
+📌 GET /api/sweets
+📌 GET /api/sweets/search
+📌 POST /api/sweets (Admin only)
+📌 PUT /api/sweets/:id (Admin only)
+📌 DELETE /api/sweets/:id (Admin only)
 
-GET /api/sweets
+📦 Inventory
 
-GET /api/sweets/search
-
-POST /api/sweets (Admin)
-
-PUT /api/sweets/:id (Admin)
-
-DELETE /api/sweets/:id (Admin)
-
-* Inventory
-
-POST /api/sweets/:id/purchase
-
-POST /api/sweets/:id/restock (Admin)
-
-🤖 My AI Usage
-
-AI Tools Used
-
-ChatGPT
-
-* How I Used AI
-
-To brainstorm backend API structure and endpoint behavior
-
-To generate initial unit test cases for authentication and role authorization
-
-To assist in refactoring controllers and middleware logic
-
-To validate edge cases during API testing
-
-* Reflection on AI Usage
-
-AI significantly improved my development speed, especially during the testing and refactoring phase.
-However, I manually reviewed, debugged, and adjusted all AI-generated code to ensure correctness and alignment with project requirements. AI acted as a supporting assistant, not a replacement for understanding or decision-making.
+📌 POST /api/sweets/:id/purchase
+📌 POST /api/sweets/:id/restock (Admin only)
 
 📁 Project Structure (High Level)
 frontend/
-  ├── src/
-  ├── public/
+ ├── src/
+ ├── public/
 
 backend/
-  ├── src/
-  ├── tests/
-  ├── middlewares/
-  ├── modules/
+ ├── src/
+ ├── tests/
+ ├── middlewares/
+ ├── modules/
 
 screenshots/
-  ├── login.png
-  ├── dashboard.png
-  ├── admin.png
+ ├── login.png
+ ├── dashboard.png
+ ├── admin.png
 
 🚀 How to Run Locally
-Backend
-cd /backend
+▶ Backend
+cd backend
 npm install
 npm start
 
-Frontend
-cd /frontend
+▶ Frontend
+cd frontend
 npm install
 npm start
+
+🧪 Testing Summary
+
+✅ Authentication tests
+✅ Authorization & role-based access tests
+✅ Sweets CRUD operations
+✅ Inventory purchase & restock logic
+
+🟢 Total Tests: 14
+🟢 Passed: 14 / 14
+
+Fail → Fix → Refactor methodology followed throughout development.
+
+🤖 My AI Usage
+🧠 AI Tools Used
+
+🤖 ChatGPT
+
+🛠 How I Used AI
+
+✨ Brainstormed backend API structure and endpoint responsibilities
+✨ Generated initial unit test templates for authentication & authorization
+✨ Assisted in refactoring controllers and middleware logic
+✨ Helped validate edge cases during API testing
+
+🧩 Reflection on AI Usage
+
+🧠 AI significantly improved my development speed, especially during testing and refactoring.
+🧠 It reduced repetitive boilerplate work and suggested alternate approaches.
+
+However:
+⚠ All AI-generated code was manually reviewed
+⚠ Logic was debugged and modified to match real requirements
+⚠ Final architectural and implementation decisions were entirely mine
+
+AI was used strictly as a supporting assistant, not as a replacement for understanding or decision-making.
