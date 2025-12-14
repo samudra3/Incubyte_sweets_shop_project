@@ -1,7 +1,7 @@
 🌐 Live Links
 
 🔗 Frontend (Live Project)
-👉 https://sweetsshop-4jdqcloc1-sahil-singhs-projects-25af95e5.vercel.app
+👉 https://sweet-shop-frontend-15vvwxe20-sahil-singhs-projects-25af95e5.vercel.app
 
 🔗 Backend API
 👉 https://sweet-shop-backend-2-imm1.onrender.com
