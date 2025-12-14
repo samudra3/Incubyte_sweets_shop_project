@@ -1,0 +1,114 @@
+🧪 Test Report
+Project: Sweet Shop Management System
+
+Backend API & Integration Testing
+
+1. Objective
+
+The objective of this test report is to present the results of automated testing performed on the Sweet Shop Management System backend.
+The tests ensure correctness, security, and reliability of authentication, authorization, sweets management, and inventory operations.
+
+2. Testing Tools & Environment
+
+Testing Framework: Jest
+
+HTTP Testing: Supertest
+
+Database: MongoDB (Test Environment)
+
+Runtime: Node.js
+
+Environment Variables: .env.test
+
+All tests were executed in an isolated test environment to avoid affecting production data.
+
+3. Test Scope
+
+The following modules were covered:
+
+Authentication
+
+User registration
+
+User login
+
+Invalid credentials handling
+
+Authorization & Middleware
+
+Token-based authentication
+
+Role-based access control (User vs Admin)
+
+Admin-only route protection
+
+Sweets Module
+
+Create sweet (Admin only)
+
+List all sweets
+
+Search sweets by name and price range
+
+Inventory Management
+
+Purchase sweet (quantity decrease)
+
+Restock sweet (Admin only)
+
+4. Test Execution Summary
+Category	      TotalTests	Passed  Failed
+Authentication	 4	          4	    0
+Authorization	 3	          3	    0
+Sweets Module	 5	          5	    0
+Inventory	       2	          2	    0
+Total	            14	         14	    0
+5. Test Results
+✔ Overall Result: PASS
+
+All automated test cases executed successfully without any failures.
+
+Test Suites: 8 passed, 8 total
+Tests:       14 passed, 14 total
+Snapshots:   0 total
+Time:        ~3 seconds
+
+6. Key Validations
+
+Unauthorized users are correctly blocked from protected routes.
+
+Admin-only actions (create, restock, delete sweets) are enforced.
+
+Inventory quantity updates correctly during purchase and restock.
+
+Search functionality works for name and price filters.
+
+Error handling behaves as expected for invalid inputs.
+
+7. Testing Methodology
+
+A fail → fix → refactor methodology was followed:
+
+Write failing test cases first
+
+Implement the required functionality
+
+Refactor code while keeping tests passing
+
+This ensured correctness and maintainability.
+
+8. AI Usage in Testing
+
+* AI tools were used selectively to:
+
+Generate initial test case structures
+
+Speed up repetitive boilerplate test writing
+
+All generated tests were:
+
+Manually reviewed
+
+Modified to match real API responses
+
+Executed and verified locally
